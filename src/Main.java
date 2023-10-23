@@ -29,6 +29,7 @@ public class Main {
         //Third exercise
         var workers = persons.stream()
                 .filter(age-> age.getAge()>=18)
+                .filter(value-> (value.getSex()==Sex.MAN && value.getAge() < 65)|| (value.getSex()==Sex.WOMAN && value.getAge() < 60))
                 .filter(ed -> ed.getEducation()==Education.HIGHER)
                 .sorted(Comparator.comparing(Person::getFamily))
                 .collect(Collectors.toList());
